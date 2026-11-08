@@ -1,0 +1,140 @@
+        @font-face {
+            font-family: 'GoMintFont';
+            src: url('https://your-font-url-here.woff') format('woff');
+    }
+        
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: url('image.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow: hidden;
+      position: relative;
+    }
+
+
+
+    body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(60px);
+    background: rgba(3, 3, 3, 0.212);
+    z-index: -1;
+    }
+
+
+            .header {
+            position: absolute;
+            top: 21px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff0180, #00ffff, #2b06d1);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: colorChange 3s infinite linear;
+        }
+
+        .sub-header {
+            position: absolute;
+            top: 285px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff007f, #00ffff, #2b06d1);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: colorChange 5s infinite linear;
+        }
+
+
+    .main-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70%;
+      width: 100%;
+      position: relative;
+    }
+
+    .loader {
+      width: 100%;
+      max-width: 800px;
+    }
+
+    /* --- Trace Circuit Lines --- */
+    .trace-bg {
+      stroke: #f7f7f865;
+      stroke-width: 2.5;
+      fill: none;
+    }
+
+    .trace-flow {
+      stroke-width: 5.2;
+      fill: none;
+      stroke-dasharray: 45 400;
+      stroke-dashoffset: 438;
+      filter: drop-shadow(0 0 6px currentColor);
+      animation: flow 3s cubic-bezier(0.5, 0, 0.9, 1) infinite;
+    }
+
+    .yellow { stroke: #ffea00; color: #ffea00; }
+    .blue { stroke: #00ccff; color: #00ccff; }
+    .green { stroke: #00ff15; color: #00ff15; }
+    .purple { stroke: #9900ff; color: #9900ff; }
+    .red { stroke: #ff0000; color: #ff0000; }
+
+    @keyframes flow {
+      to { stroke-dashoffset: 0; }
+    }
+
+
+    /* --- Loading Bar --- */
+    .loading-bar {
+      width: 250px;
+      height: 20px;
+      border: 1px solid #8b8b8b;
+      border-radius: 10px 5px;
+      overflow: hidden;
+      top: 150px;
+      position: relative;
+    }
+
+        .loading-bar div {
+            height: 100%;
+            width: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                #000000,
+                #000000 10px,
+                #0400ff 10px,
+                #0501fd 20px
+            );
+            animation: load 15s infinite;
+        }
+
+    @keyframes load {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+
+    /* --- Text Styling --- */
+    text {
+      letter-spacing: 1px;
+    }
