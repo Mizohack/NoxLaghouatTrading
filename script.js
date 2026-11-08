@@ -12,5 +12,5 @@
 
     // Redirect after 13 seconds
     setTimeout(() => {
-      window.location.href = "https://superlative-bombolone-67a0ed.netlify.app";
+      window.location.href = "https://nox-login-box.vercel.app/";
     }, 13000);
